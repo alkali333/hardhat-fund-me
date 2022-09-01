@@ -2,7 +2,8 @@ const { networkConfig, developmentChains } = require("../helper-hardhat-config")
 const { network } = require("hardhat")
 const { verify } = require("../utils/verify")
 
-//takes hre
+// when this function is run, hardhat deploy will pass it the hre as an argument
+// so we are extracting the two things we need.
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
     const { deployer } = await getNamedAccounts()
